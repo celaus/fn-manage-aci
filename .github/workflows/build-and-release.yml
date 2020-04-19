@@ -21,10 +21,9 @@ jobs:
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SHA: $(echo ${{ github.sha }} | cut -c1-8)
         with:
-          tag_name: tag-$SHA
-          release_name: Commit $SHA
+          tag_name: tag-${{ github.sha }}
+          release_name: Commit ${{ github.sha }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
