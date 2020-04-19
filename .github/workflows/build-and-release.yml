@@ -15,7 +15,7 @@ jobs:
         run: |
           dotnet publish -c Release -o out
           cd out
-          zip ../aci-manage *
+          zip -r ../aci-manage *
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
